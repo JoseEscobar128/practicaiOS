@@ -24,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This occurs shortly after the scene enters the background, or when its session is discarded.
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
         // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
+        guardarArchivo()
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
@@ -45,7 +46,30 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        guardarArchivo()
     }
+    
+    //Guarda archivo persistente plist
+    func guardarArchivo() {
+        let datos = Datos.sharedDatos()
+        let documentosPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let ruta = documentosPath + "/Conf.plist"
+        let urlArchivo = URL(fileURLWithPath: ruta)
+
+        // Convertir la lista de jugadores a un array de diccionarios
+        let arrayJugadores = datos.jugadores.map { jugador in
+            return ["nombre": jugador.nombre, "puntuacion": jugador.puntuacion]
+        }
+
+        do {
+            let archivo = try PropertyListSerialization.data(fromPropertyList: arrayJugadores, format: .xml, options: 0)
+            try archivo.write(to: urlArchivo)
+        } catch {
+            print("Algo salió mal al escribir el archivo: \(error.localizedDescription)")
+        }
+    }
+
+
 
 
 }

@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        abrirArchivo()
         return true
     }
 
@@ -30,6 +32,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    //Abre el archivo persistente plist
+    func abrirArchivo() {
+        let datos = Datos.sharedDatos()
+        let ruta = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/Conf.plist"
+        let urlArchivo = URL(fileURLWithPath: ruta)
+        print(ruta)
+
+        do {
+            let archivo = try Data(contentsOf: urlArchivo)
+
+            if let diccionario = try PropertyListSerialization.propertyList(from: archivo, options: [], format: nil) as? [String: Any] {
+                // Si el contenido es un diccionario, asume que es la antigua estructura y actualiza la lista de jugadores
+                if let nombre = diccionario["nombre"] as? String, let puntuacion = diccionario["puntuacion"] as? Int {
+                    datos.jugadores = [(nombre: nombre, puntuacion: puntuacion)]
+                }
+            } else if let arrayJugadores = try PropertyListSerialization.propertyList(from: archivo, options: [], format: nil) as? [[String: Any]] {
+                // Si el contenido es un array, actualiza la lista de jugadores
+                datos.jugadores = arrayJugadores.compactMap { jugadorDict in
+                    guard let nombre = jugadorDict["nombre"] as? String,
+                          let puntuacion = jugadorDict["puntuacion"] as? Int else {
+                        return nil
+                    }
+                    return (nombre: nombre, puntuacion: puntuacion)
+                }
+            } else {
+                print("Contenido de archivo inesperado.")
+            }
+
+        } catch {
+            print("Algo salió mal =(")
+        }
+    }
+
+
 
 }
 
