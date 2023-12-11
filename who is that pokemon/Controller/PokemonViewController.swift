@@ -32,9 +32,6 @@ class PokemonViewController: UIViewController {
     var correctAnswerImage: String = ""
     var audioPlayer: AVAudioPlayer?
     
-    //static var shared: PokemonViewController!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,24 +67,10 @@ class PokemonViewController: UIViewController {
                 
             }
         }else{
-            /*lblRespuesta.text = "No, es un \(correctAnswer.capitalized)"
-            sender.layer.borderColor = UIColor.systemRed.cgColor
-            sender.layer.borderWidth = 2.0
-            let url = URL(string: correctAnswerImage)
-            imgPokemon.kf.setImage(with: url)
-            
-            
-            Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false ){ Timer in
-                self.resetGame()
-                sender.layer.borderWidth = 0
-             }*/
-            
             checkAndShowAppropriateScreen(game.score)
-            //self.performSegue(withIdentifier: "goToResult", sender: self)
-            
         }
     }
-    // Nueva función para verificar y mostrar la pantalla adecuada
+    //función para verificar y mostrar la pantalla
     func checkAndShowAppropriateScreen(_ newScore: Int) {
         var isHighScore = false
 
@@ -124,18 +107,6 @@ class PokemonViewController: UIViewController {
         }
     }
     
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        if segue.identifier == "goToResult"{
-            let destination = segue.destination as! ResultsViewController
-            destination.pokemonName = correctAnswer
-            destination.pokemonImageURL = correctAnswerImage
-            destination.finalScore = game.score
-            resetGame()
-        }
-    }*/
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
@@ -157,8 +128,6 @@ class PokemonViewController: UIViewController {
             destination.finalScore = game.score
             resetGame()
             
-            // Asigna la instancia actual a la propiedad estática shared
-            //PokemonViewController.shared = self
         }
     }
     

@@ -15,7 +15,7 @@ class Datos: NSObject {
         super.init()
         
         // Inicializar con algunos datos de ejemplo
-        jugadores = [("Jugador1", 100), ("Jugador2", 150), ("Jugador3", 200), ("Jugador4", 50), ("Jugador5", 300)]
+        //jugadores = [("Jugador1", 1), ("Jugador2", 1), ("Jugador3", 1), ("Jugador4", 1), ("Jugador5", 1)]
     }
     
     static func sharedDatos() -> Datos {
@@ -25,17 +25,7 @@ class Datos: NSObject {
         
         return singleton
     }
-    
-    /*func agregarJugador(nombre: String, puntuacion: Int) {
-            // Busca si ya existe un jugador con el mismo nombre
-            if let index = jugadores.firstIndex(where: { $0.nombre == nombre }) {
-                // Si existe, actualiza la puntuación
-                jugadores[index].puntuacion = puntuacion
-            } else {
-                // Si no existe, agrega un nuevo jugador
-                jugadores.append((nombre: nombre, puntuacion: puntuacion))
-            }
-        }*/
+
     
     func agregarJugador(nombre: String, puntuacion: Int) {
         // Busca el índice del primer jugador con una puntuación igual o menor

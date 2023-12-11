@@ -21,9 +21,9 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         playBackgroundMusic()
-        
-        // Do any additional setup after loading the view.
+    
     }
+    
     
     @IBAction func btnPlay(_ sender: UIButton) {
         if audioPlayer.isPlaying

@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class RegistroViewController: UIViewController {
 
     
@@ -24,9 +25,18 @@ class RegistroViewController: UIViewController {
     }
     
     @IBAction func playAgain(_ sender: Any) {
-                guardarArchivo()
-               self.performSegue(withIdentifier: "sgPlayAgain", sender: nil)
-           }
+        guardarArchivo()
+
+        // Obtén la instancia de MenuViewController del storyboard
+        if let menuViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MenuViewController") as? MenuViewController {
+            // Reinicia la configuración antes de realizar la transición
+            menuViewController.playBackgroundMusic()
+
+            // Realiza la transición a MenuViewController
+            self.navigationController?.pushViewController(menuViewController, animated: true)
+        }
+    }
+
     
     func guardarArchivo() {
         let datos = Datos.sharedDatos()

@@ -223,7 +223,7 @@
         <!--MenuViewController-->
         <scene sceneID="hhg-Uj-7pM">
             <objects>
-                <viewController title="MenuViewController" id="f1w-Iu-5qh" customClass="MenuViewController" customModule="who_is_that_pokemon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" title="MenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="f1w-Iu-5qh" customClass="MenuViewController" customModule="who_is_that_pokemon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XkB-Um-VD4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -507,12 +507,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQb-WD-MNd">
-                                <rect key="frame" x="113.33333333333333" y="738" width="166.33333333333337" height="35"/>
+                                <rect key="frame" x="145" y="738" width="103" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="JUGAR DE NUEVO"/>
+                                <buttonConfiguration key="configuration" style="filled" title="GUARDAR"/>
                                 <connections>
                                     <action selector="playAgain:" destination="J66-4u-nHt" eventType="touchUpInside" id="Fwm-FY-4gL"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="sgPlayAgain" id="Czl-Lp-LMN"/>
+                                    <segue destination="f1w-Iu-5qh" kind="presentation" identifier="sgInicio" modalPresentationStyle="fullScreen" id="5I8-ZM-dfA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -549,7 +549,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Czl-Lp-LMN"/>
+        <segue reference="D36-XO-9IC"/>
+        <segue reference="5I8-ZM-dfA"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Logo" width="1666.6666259765625" height="1041.6666259765625"/>

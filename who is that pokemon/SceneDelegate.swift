@@ -51,23 +51,31 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     //Guarda archivo persistente plist
     func guardarArchivo() {
+        // Obtiene la instancia compartida de Datos
         let datos = Datos.sharedDatos()
+        
+        // Obtiene la ruta del directorio de documentos y concatena el nombre del archivo plist
         let documentosPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         let ruta = documentosPath + "/Conf.plist"
         let urlArchivo = URL(fileURLWithPath: ruta)
 
-        // Convertir la lista de jugadores a un array de diccionarios
+        // Convierte la lista de jugadores a un array de diccionarios
         let arrayJugadores = datos.jugadores.map { jugador in
             return ["nombre": jugador.nombre, "puntuacion": jugador.puntuacion]
         }
 
         do {
+            // Convierte el array de diccionarios a formato de datos plist (.xml)
             let archivo = try PropertyListSerialization.data(fromPropertyList: arrayJugadores, format: .xml, options: 0)
+            
+            // Escribe los datos en el archivo en la ruta especificada
             try archivo.write(to: urlArchivo)
         } catch {
+            // Maneja errores en caso de que algo salga mal al escribir el archivo
             print("Algo salió mal al escribir el archivo: \(error.localizedDescription)")
         }
     }
+
 
 
 
