@@ -16,13 +16,16 @@ class ScoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Construir una cadena con la lista de nombres y puntuaciones
+        // Ordena la lista de jugadores de mayor a menor puntuación
+                let jugadoresOrdenados = datos.jugadores.sorted { $0.puntuacion > $1.puntuacion }
+
+                // Construir una cadena con la lista de nombres y puntuaciones
                 var scoreText = ""
-               
-        for jugador in datos.jugadores {
-            scoreText += "\(jugador.nombre):\t \(jugador.puntuacion)\n"
-            print("Nombre: \(jugador.nombre), Puntuación: \(jugador.puntuacion)")
-        }
+
+                for jugador in jugadoresOrdenados {
+                    scoreText += "\(jugador.nombre):\t \(jugador.puntuacion)\n"
+                    print("Nombre: \(jugador.nombre), Puntuación: \(jugador.puntuacion)")
+                }
 
                 // Establecer el texto del label con la lista de nombres y puntuaciones
                 txtScore.text = scoreText

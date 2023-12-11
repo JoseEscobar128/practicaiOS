@@ -29,6 +29,8 @@ class ResultsViewController: UIViewController {
     
     @IBAction func playAgainPressed(_ sender: Any) {
         self.dismiss(animated: true)
+        
+        
     }
     
     /*

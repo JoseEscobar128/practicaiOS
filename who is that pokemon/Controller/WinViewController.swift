@@ -22,6 +22,8 @@ class WinViewController: UIViewController {
     var pokemonImageURL:String = " "
     var finalScore:Int = 0
     
+    lazy var game = GameModel()
+    
     
     
     override func viewDidLoad() {
@@ -35,17 +37,23 @@ class WinViewController: UIViewController {
     }
     
     @IBAction func btnRegistar(_ sender: UIButton) {
-        
+        self.performSegue(withIdentifier: "sgRegistro", sender: nil)
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "sgRegistro" {
+            let destination = segue.destination as! RegistroViewController
+            destination.finalScore = finalScore
+            
+            
+            // Asigna la instancia actual a la propiedad estática shared
+            //PokemonViewController.shared = self
+        }
     }
-    */
+    
 
 }

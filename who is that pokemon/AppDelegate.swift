@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  who is that pokemon
 //
-//  Created by Alex Camacho on 01/08/22.
+//  Created by Jose Escobar on 06/12/23.
 //
 
 import UIKit

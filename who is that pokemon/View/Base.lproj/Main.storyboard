@@ -454,15 +454,14 @@
         <!--RegistroViewController-->
         <scene sceneID="GrB-Bj-SEB">
             <objects>
-                <viewController title="RegistroViewController" id="J66-4u-nHt" customClass="RegistroViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistroViewController" title="RegistroViewController" id="J66-4u-nHt" customClass="RegistroViewController" customModule="who_is_that_pokemon" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qnU-jr-Wfz">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registro " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wg7-Pj-lrq">
-                                <rect key="frame" x="132" y="10" width="129" height="58"/>
+                                <rect key="frame" x="130.33333333333331" y="10" width="132.33333333333331" height="58"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="129" id="OBZ-9Q-w7S"/>
                                     <constraint firstAttribute="height" constant="58" id="rHZ-A9-95w"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
@@ -508,10 +507,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQb-WD-MNd">
-                                <rect key="frame" x="46.666666666666657" y="738" width="300" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="d74-O9-7Py"/>
-                                </constraints>
+                                <rect key="frame" x="113.33333333333333" y="738" width="166.33333333333337" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="JUGAR DE NUEVO"/>
                                 <connections>
@@ -543,7 +539,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Qmz-5E-3Wy"/>
                     <connections>
-                        <outlet property="lblScore" destination="gvC-rr-uJ7" id="wRv-WY-6pz"/>
+                        <outlet property="lblScore" destination="gvC-rr-uJ7" id="jMS-na-LOq"/>
                         <outlet property="txtName" destination="FsV-a2-NCX" id="dn7-D7-YAc"/>
                     </connections>
                 </viewController>

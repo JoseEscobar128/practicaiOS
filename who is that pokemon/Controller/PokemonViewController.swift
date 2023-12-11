@@ -32,6 +32,8 @@ class PokemonViewController: UIViewController {
     var correctAnswerImage: String = ""
     var audioPlayer: AVAudioPlayer?
     
+    //static var shared: PokemonViewController!
+    
     
     
     override func viewDidLoad() {
@@ -149,6 +151,14 @@ class PokemonViewController: UIViewController {
             destination.pokemonImageURL = correctAnswerImage
             destination.finalScore = game.score
             resetGame()
+        }
+        else if segue.identifier == "sgRegistro" {
+            let destination = segue.destination as! RegistroViewController
+            destination.finalScore = game.score
+            resetGame()
+            
+            // Asigna la instancia actual a la propiedad estática shared
+            //PokemonViewController.shared = self
         }
     }
     
