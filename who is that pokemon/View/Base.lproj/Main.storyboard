@@ -235,10 +235,9 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGV-kT-i0e">
-                                <rect key="frame" x="45" y="471" width="303" height="69"/>
+                                <rect key="frame" x="130" y="471" width="133" height="69"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="69" id="2KW-pS-IpP"/>
-                                    <constraint firstAttribute="width" constant="303" id="Nyh-Zh-Roo"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="JUGAR">
@@ -250,10 +249,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5s-7a-vtg">
-                                <rect key="frame" x="45" y="600" width="303" height="69"/>
+                                <rect key="frame" x="129.66666666666666" y="600" width="133.99999999999997" height="69"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="69" id="dYD-7v-oIm"/>
-                                    <constraint firstAttribute="width" constant="303" id="sgr-RX-N1p"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="SCORE">
@@ -265,10 +263,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZf-Fy-G20">
-                                <rect key="frame" x="166.66666666666666" y="679" width="60" height="60"/>
+                                <rect key="frame" x="176.66666666666666" y="679" width="40" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Xkn-Tb-bNp"/>
-                                    <constraint firstAttribute="width" constant="60" id="alP-li-Se3"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="play.png" imagePadding="0.0">
@@ -339,7 +336,6 @@
                                 <rect key="frame" x="129" y="50" width="135" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Ysa-sd-QSP"/>
-                                    <constraint firstAttribute="width" constant="135" id="hgQ-mz-1FK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
                                 <nil key="textColor"/>
@@ -460,7 +456,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registro " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wg7-Pj-lrq">
-                                <rect key="frame" x="130.33333333333331" y="10" width="132.33333333333331" height="58"/>
+                                <rect key="frame" x="130.66666666666666" y="10" width="131.99999999999997" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="rHZ-A9-95w"/>
                                 </constraints>
@@ -488,11 +484,14 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FsV-a2-NCX">
                                 <rect key="frame" x="71.666666666666686" y="398" width="250" height="34"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" keyboardKey="YES" adjustable="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="O2P-po-F1f"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TU PUNTAJE FUE :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuF-3z-tzp">
                                 <rect key="frame" x="108" y="562" width="177" height="26"/>
@@ -545,11 +544,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eqj-mG-id1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2000.7633587786258" y="97.887323943661983"/>
+            <point key="canvasLocation" x="1903" y="98"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="D36-XO-9IC"/>
         <segue reference="5I8-ZM-dfA"/>
     </inferredMetricsTieBreakers>
     <resources>

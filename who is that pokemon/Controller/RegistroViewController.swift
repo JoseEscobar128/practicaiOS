@@ -21,7 +21,7 @@ class RegistroViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         lblScore.text = "\(finalScore)"
-        // Do any additional setup after loading the view.
+        
     }
     
     @IBAction func playAgain(_ sender: Any) {
@@ -36,6 +36,7 @@ class RegistroViewController: UIViewController {
             self.navigationController?.pushViewController(menuViewController, animated: true)
         }
     }
+    
 
     
     func guardarArchivo() {
