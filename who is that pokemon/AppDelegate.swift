@@ -49,6 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             // Crea una URL con la ruta del archivo
             let urlArchivo = URL(fileURLWithPath: ruta)
+            
 
             do {
                 // Resto del código para leer el archivo...

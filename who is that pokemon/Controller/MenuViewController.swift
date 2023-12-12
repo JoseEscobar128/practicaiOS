@@ -36,6 +36,7 @@ class MenuViewController: UIViewController {
         {
             sender.setImage(UIImage(named: "play.png"), for: .normal)
             audioPlayer.play()
+            
         }
     }
     
@@ -56,6 +57,7 @@ class MenuViewController: UIViewController {
                 audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
                 audioPlayer.numberOfLoops = -1 // Repetir indefinidamente
                 audioPlayer.play()
+                print("La canción se inició correctamente.")
             } catch {
                 print("Error al reproducir la canción: \(error.localizedDescription)")
             }
