@@ -491,7 +491,7 @@
                                     <constraint firstAttribute="width" constant="250" id="O2P-po-F1f"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="yes" textContentType="name"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="yes" textContentType="name"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TU PUNTAJE FUE :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuF-3z-tzp">
                                 <rect key="frame" x="108" y="562" width="177" height="26"/>
