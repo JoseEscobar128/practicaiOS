@@ -7,24 +7,28 @@
 
 import UIKit
 
+class RegistroViewController: UIViewController, UITextFieldDelegate {
 
-class RegistroViewController: UIViewController {
-
-    
     @IBOutlet weak var lblScore: UILabel!
     @IBOutlet weak var txtName: UITextField!
-    
+
     let datos = Datos.sharedDatos()
-    var name:String = ""
-    var finalScore:Int = 0
-    
+    var name: String = ""
+    var finalScore: Int = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         lblScore.text = "\(finalScore)"
-        
+
+        // Establece el delegado del campo de texto
+        txtName.delegate = self
     }
-    
+
     @IBAction func playAgain(_ sender: Any) {
+        // Oculta el teclado si está visible
+        view.endEditing(true)
+
+        // Llama a la función para guardar el archivo
         guardarArchivo()
 
         // Obtén la instancia de MenuViewController del storyboard
@@ -36,15 +40,12 @@ class RegistroViewController: UIViewController {
             self.navigationController?.pushViewController(menuViewController, animated: true)
         }
     }
-    
 
-    
     func guardarArchivo() {
-        let datos = Datos.sharedDatos()
         let documentosPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         let ruta = documentosPath + "/Conf.plist"
         let urlArchivo = URL(fileURLWithPath: ruta)
-        
+
         let nombre = txtName.text ?? ""
         let puntuacion = finalScore
 
@@ -64,16 +65,11 @@ class RegistroViewController: UIViewController {
         }
     }
 
-    }
-    
-    /*
-    // MARK: - Navigation
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Oculta el teclado al presionar "Continuar"
+        textField.resignFirstResponder()
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        return true
     }
-    */
-
+}
 
