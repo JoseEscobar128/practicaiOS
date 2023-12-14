@@ -12,6 +12,7 @@ import AVFAudio
 class PokemonViewController: UIViewController {
 
     
+    @IBOutlet weak var lblVidas: UILabel!
     @IBOutlet var btnOpciones: [UIButton]!
     @IBOutlet weak var lblRespuesta: UILabel!
     @IBOutlet weak var imgPokemon: UIImageView!
@@ -46,6 +47,8 @@ class PokemonViewController: UIViewController {
         pokemonManager.fetchPokeon()
         lblRespuesta.text = " "
         
+        actualizarEtiquetaVidas()
+        
     }
     
     @IBAction func btnPressed(_ sender: UIButton) {
@@ -75,13 +78,23 @@ class PokemonViewController: UIViewController {
                 
                 let oportunidadesRestantes = 3 - intentosIncorrectos
                             // Informar al usuario sobre la respuesta incorrecta pero continuar el juego
-                lblRespuesta.text = "Incorrecto. Te quedan \(oportunidadesRestantes) oportunidades. ¡Inténtalo de nuevo!"
+                lblRespuesta.text = "¡Inténtalo de nuevo!"
+                
+                // Actualizar la etiqueta de vidas
+                        actualizarEtiquetaVidas()
                         } else {
                             // Se alcanzaron tres intentos incorrectos, ir a la pantalla de resultados
                             checkAndShowAppropriateScreen(game.score)
                         }
         }
     }
+    
+    func actualizarEtiquetaVidas() {
+        let vidasRestantes = 3 - intentosIncorrectos
+        lblVidas.text = "Vidas: \(vidasRestantes)"
+    }
+    
+    
     //función para verificar y mostrar la pantalla
     func checkAndShowAppropriateScreen(_ newScore: Int) {
         var isHighScore = false
@@ -105,6 +118,8 @@ class PokemonViewController: UIViewController {
             performSegue(withIdentifier: "goToResult", sender: self)
         }
     }
+    
+    
     
     
     
@@ -149,6 +164,7 @@ class PokemonViewController: UIViewController {
         lblScore.text = "Puntaje: \(game.score)"
         self.lblRespuesta.text = " "
         intentosIncorrectos = 0
+        actualizarEtiquetaVidas()
     }
     
     func setButtonTitles() {

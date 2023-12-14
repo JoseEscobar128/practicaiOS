@@ -17,11 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="bg9-sU-a4y" userLabel="Container">
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalCentering" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="bg9-sU-a4y" userLabel="Container">
                                 <rect key="frame" x="0.0" y="20" width="393" height="802"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="s4G-r7-xx6" userLabel="Header">
-                                        <rect key="frame" x="48" y="0.0" width="297.33333333333331" height="75.333333333333329"/>
+                                        <rect key="frame" x="48" y="0.0" width="297.33333333333337" height="121.66666666666667"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Quién es este Pokémon?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWt-A7-Pzx">
                                                 <rect key="frame" x="0.0" y="0.0" width="297.33333333333331" height="30"/>
@@ -35,27 +35,33 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vidas: 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dsm-dH-BKh">
+                                                <rect key="frame" x="110" y="95.333333333333329" width="77" height="26.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <color key="textColor" red="0.0" green="0.43921568630000002" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XiA-V9-6bd" userLabel="Pokemon">
-                                        <rect key="frame" x="69" y="216.66666666666666" width="255" height="300.33333333333337"/>
+                                        <rect key="frame" x="86.666666666666686" y="245.66666666666671" width="220" height="265.33333333333326"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pikachu" translatesAutoresizingMaskIntoConstraints="NO" id="KuH-Tb-DHX">
-                                                <rect key="frame" x="0.0" y="0.0" width="255" height="255"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="220" height="220"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="255" id="1AO-3M-hAz"/>
-                                                    <constraint firstAttribute="height" constant="255" id="u4e-73-ajT"/>
+                                                    <constraint firstAttribute="width" constant="220" id="1AO-3M-hAz"/>
+                                                    <constraint firstAttribute="height" constant="220" id="u4e-73-ajT"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sí, es un Pikachu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwc-BK-jXE">
-                                                <rect key="frame" x="45.333333333333329" y="275" width="164.33333333333337" height="25.333333333333314"/>
+                                                <rect key="frame" x="27.666666666666657" y="240" width="164.33333333333334" height="25.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zCz-0i-hvb" userLabel="Buttons">
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zCz-0i-hvb" userLabel="Buttons">
                                         <rect key="frame" x="20" y="590" width="353" height="212"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPE-G3-QOR">
@@ -129,6 +135,7 @@
                         <outlet property="imgPokemon" destination="KuH-Tb-DHX" id="tbR-lp-o5Y"/>
                         <outlet property="lblRespuesta" destination="zwc-BK-jXE" id="cxU-Mq-CPM"/>
                         <outlet property="lblScore" destination="mXW-d2-WIl" id="Ygp-np-0ro"/>
+                        <outlet property="lblVidas" destination="Dsm-dH-BKh" id="33T-nl-cWc"/>
                         <outletCollection property="btnOpciones" destination="YPE-G3-QOR" collectionClass="NSMutableArray" id="JK8-LS-yrG"/>
                         <outletCollection property="btnOpciones" destination="YPE-G3-QOR" collectionClass="NSMutableArray" id="btw-kS-ULt"/>
                         <outletCollection property="btnOpciones" destination="O95-M6-Fow" collectionClass="NSMutableArray" id="HmK-r9-Cyo"/>
@@ -146,7 +153,7 @@
         <scene sceneID="rIj-8a-Kaa">
             <objects>
                 <viewController id="For-mf-rOd" customClass="ResultsViewController" customModule="who_is_that_pokemon" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Lsw-wP-l0m">
+                    <view key="view" contentMode="scaleToFill" id="Lsw-wP-l0m">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -548,6 +555,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="kPY-mU-GCz"/>
         <segue reference="5I8-ZM-dfA"/>
     </inferredMetricsTieBreakers>
     <resources>
