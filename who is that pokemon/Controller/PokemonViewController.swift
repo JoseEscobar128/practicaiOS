@@ -31,6 +31,7 @@ class PokemonViewController: UIViewController {
     var correctAnswer: String = ""
     var correctAnswerImage: String = ""
     var audioPlayer: AVAudioPlayer?
+    var intentosIncorrectos: Int = 0
     
     
     override func viewDidLoad() {
@@ -67,7 +68,18 @@ class PokemonViewController: UIViewController {
                 
             }
         }else{
-            checkAndShowAppropriateScreen(game.score)
+            //checkAndShowAppropriateScreen(game.score)
+            intentosIncorrectos += 1
+            
+            if intentosIncorrectos < 3 {
+                
+                let oportunidadesRestantes = 3 - intentosIncorrectos
+                            // Informar al usuario sobre la respuesta incorrecta pero continuar el juego
+                lblRespuesta.text = "Incorrecto. Te quedan \(oportunidadesRestantes) oportunidades. ¡Inténtalo de nuevo!"
+                        } else {
+                            // Se alcanzaron tres intentos incorrectos, ir a la pantalla de resultados
+                            checkAndShowAppropriateScreen(game.score)
+                        }
         }
     }
     //función para verificar y mostrar la pantalla
@@ -136,6 +148,7 @@ class PokemonViewController: UIViewController {
         game.setScore(score: 0)
         lblScore.text = "Puntaje: \(game.score)"
         self.lblRespuesta.text = " "
+        intentosIncorrectos = 0
     }
     
     func setButtonTitles() {

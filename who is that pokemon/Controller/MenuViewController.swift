@@ -58,6 +58,7 @@ class MenuViewController: UIViewController {
                 audioPlayer.numberOfLoops = -1 // Repetir indefinidamente
                 audioPlayer.play()
                 print("La canción se inició correctamente.")
+                print("Ruta de la canción: \(path)")
             } catch {
                 print("Error al reproducir la canción: \(error.localizedDescription)")
             }
